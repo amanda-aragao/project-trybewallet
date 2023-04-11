@@ -26,13 +26,13 @@ class Login extends React.Component {
 
   handleClick = () => {
     const { history, dispatch } = this.props;
-    const { email, password } = this.state;
+    const { email } = this.state;
     history.push('/carteira');
-    dispatch(saveLogin({ email, password }));
+    dispatch(saveLogin(email));
   };
 
   render() {
-    const { disabledButton, email, password } = this.state;
+    const { disabledButton, email } = this.state;
     return (
       <div>
         <input
@@ -47,7 +47,6 @@ class Login extends React.Component {
           data-testid="password-input"
           onChange={ this.handleChange }
           name="password"
-          value={ password }
         />
         <button
           type="button"
