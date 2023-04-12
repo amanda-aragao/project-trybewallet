@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 
 class Header extends Component {
   render() {
-    const { email, expenseList, cambio } = this.props;
+    const { email, idToEdit, cambio } = this.props;
     return (
       <div>
         <p data-testid="email-field">
           { email }
         </p>
         <p data-testid="total-field">
-          {expenseList}
+          {idToEdit}
         </p>
         <p data-testid="header-currency-field">
           { cambio }
@@ -23,7 +23,7 @@ class Header extends Component {
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
-  expenseList: PropTypes.number.isRequired,
+  idToEdit: PropTypes.number.isRequired,
   cambio: PropTypes.string.isRequired,
 };
 
