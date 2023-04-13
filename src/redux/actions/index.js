@@ -6,6 +6,7 @@ export const FETCH_CURRENCIES_REQUEST = 'FETCH_CURRENCIES_REQUEST';
 export const FETCH_CURRENCIES_SUCCES = 'FETCH_CURRENCIES_SUCCES';
 export const FETCH_CURRENCIES_FAILED = 'FETCH_CURRENCIES_FAILED,';
 export const REMOVE_KEYOPTION_USDT_API = 'REMOVE_KEYOPTION_USDT_API';
+export const EXPENSES_ACTION = 'EXPENSES_ACTION';
 
 export const saveLogin = (email) => ({
   type: SAVE_LOGIN,
@@ -35,8 +36,18 @@ export const fetchRequestFailed = (errorMessage) => ({
   },
 });
 
-export const removeKeyUSDT = () => ({
+export const ExpensesAction = (expenses) => ({
+  type: EXPENSES_ACTION,
+  payload: {
+    expenses,
+  },
+});
+
+export const removeKeyToApi = (name) => ({
   type: REMOVE_KEYOPTION_USDT_API,
+  payload: {
+    name,
+  },
 });
 
 export const fetchRequestThunk = () => async (dispatch) => {
@@ -44,8 +55,24 @@ export const fetchRequestThunk = () => async (dispatch) => {
     dispatch(fetchRequest());
     const returnApi = await fetchCurrencies();
     dispatch(fetchRequestSuccess(returnApi));
-    dispatch(removeKeyUSDT());
+    dispatch(removeKeyToApi());
   } catch (error) {
+    console.log('error', error);
+    dispatch(fetchRequestFailed('Algo deu errado'));
+  }
+};
+
+export const fetchExpensesThunk = (expense) => async (dispatch) => {
+  try {
+    const returnApi = await fetchCurrencies();
+
+    const expenseArrayValues = {
+      ...expense,
+      exchangeRates: returnApi,
+    };
+    dispatch(ExpensesAction(expenseArrayValues));
+  } catch (error) {
+    console.log('error', error);
     dispatch(fetchRequestFailed('Algo deu errado'));
   }
 };

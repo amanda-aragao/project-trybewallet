@@ -1,5 +1,6 @@
 import { FETCH_CURRENCIES_FAILED, FETCH_CURRENCIES_REQUEST,
-  FETCH_CURRENCIES_SUCCES, SAVE_WALLET, REMOVE_KEYOPTION_USDT_API } from '../actions';
+  FETCH_CURRENCIES_SUCCES, SAVE_WALLET, REMOVE_KEYOPTION_USDT_API,
+  EXPENSES_ACTION } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -37,6 +38,13 @@ const WalletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       errorMessage: action.payload.errorMessage,
+    };
+  }
+
+  case EXPENSES_ACTION: {
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload.expenses],
     };
   }
   case REMOVE_KEYOPTION_USDT_API: {
