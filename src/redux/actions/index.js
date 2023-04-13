@@ -7,6 +7,7 @@ export const FETCH_CURRENCIES_SUCCES = 'FETCH_CURRENCIES_SUCCES';
 export const FETCH_CURRENCIES_FAILED = 'FETCH_CURRENCIES_FAILED,';
 export const REMOVE_KEYOPTION_USDT_API = 'REMOVE_KEYOPTION_USDT_API';
 export const EXPENSES_ACTION = 'EXPENSES_ACTION';
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
 
 export const saveLogin = (email) => ({
   type: SAVE_LOGIN,
@@ -48,6 +49,11 @@ export const removeKeyToApi = (name) => ({
   payload: {
     name,
   },
+});
+
+export const removeExpense = (payload) => ({
+  type: REMOVE_EXPENSE,
+  payload,
 });
 
 export const fetchRequestThunk = () => async (dispatch) => {

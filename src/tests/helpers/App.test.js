@@ -46,7 +46,7 @@ describe('Testando os elementos referente a tela de Login renderizada pelo App',
     expect(title).toBeInTheDocument();
   });
 
-  test('Teste se existe um botão e se ele continua desabilitado se algum input estiver incorreto', () => {
+  test('Teste se o email é salvo no estado global quando o botão é clicado', () => {
     const { store } = renderWithRouterAndRedux(<App />);
     const emailInput = screen.getByRole('textbox');
     const passwordInput = screen.getByTestId(PASSWORD_INPUT);

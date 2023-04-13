@@ -1,6 +1,6 @@
 import { FETCH_CURRENCIES_FAILED, FETCH_CURRENCIES_REQUEST,
   FETCH_CURRENCIES_SUCCES, SAVE_WALLET, REMOVE_KEYOPTION_USDT_API,
-  EXPENSES_ACTION } from '../actions';
+  EXPENSES_ACTION, REMOVE_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -51,6 +51,12 @@ const WalletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       currencies: state.currencies.filter((currencie) => currencie !== 'USDT'),
+    };
+  }
+  case REMOVE_EXPENSE: {
+    return {
+      ...state,
+      expenses: [...action.payload],
     };
   }
   default: return state;
