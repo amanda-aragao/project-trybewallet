@@ -8,6 +8,8 @@ export const FETCH_CURRENCIES_FAILED = 'FETCH_CURRENCIES_FAILED,';
 export const REMOVE_KEYOPTION_USDT_API = 'REMOVE_KEYOPTION_USDT_API';
 export const EXPENSES_ACTION = 'EXPENSES_ACTION';
 export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const EDIT_EXPENSE_FINISHED = 'EDIT_EXPENSE_FINISHED';
 
 export const saveLogin = (email) => ({
   type: SAVE_LOGIN,
@@ -53,6 +55,16 @@ export const removeKeyToApi = (name) => ({
 
 export const removeExpense = (payload) => ({
   type: REMOVE_EXPENSE,
+  payload,
+});
+
+export const editExpense = (payload) => ({
+  type: EDIT_EXPENSE,
+  payload,
+});
+
+export const editExpenseFinished = (payload) => ({
+  type: EDIT_EXPENSE_FINISHED,
   payload,
 });
 
