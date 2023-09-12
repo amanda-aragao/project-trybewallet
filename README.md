@@ -1,4 +1,4 @@
-## Carteira de Controle de Gastos com Conversor de Moedas
+## 💰 TRYBEWALLET 💰
 Neste projeto, desenvolvi uma aplicação de carteira de controle de gastos com um conversor de moedas. Através desta aplicação, os usuários podem gerenciar seus gastos de forma eficiente, adicionando, removendo e editando transações financeiras. Além disso, a aplicação permite aos usuários visualizar uma tabela com seus gastos e o total desses gastos convertidos para uma moeda de sua escolha.
 
 ## Funcionalidades
