@@ -41,6 +41,6 @@ npm start
 ```
 
 ## Contribuição
-Se você deseja contribuir para este projeto, sinta-se à vontade para criar um fork e enviar pull requests com suas melhorias. Estou aberto a sugestões e colaborações para tornar esta carteira de controle de gastos ainda melhor.
+Se você deseja contribuir para este projeto, sinta-se à vontade para criar um fork e enviar pull requests com suas melhorias. Estou aberta a sugestões e colaborações para tornar esta carteira de controle de gastos ainda melhor.
 
 Agradeço por conferir minha descrição do projeto. Fique à vontade para entrar em contato caso tenha alguma dúvida ou precise de mais informações sobre as funcionalidades que desenvolvi. 💖
